@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # from 1 to 10 at 4 print bad luck at 8 print good luck otherwise Best school
-a=0
-while [ $a -lt 10 ]
+a=1
+while [ $a -le 10 ]
 do
     if [ $a -eq 4 ]; then
         echo "bad luck"
