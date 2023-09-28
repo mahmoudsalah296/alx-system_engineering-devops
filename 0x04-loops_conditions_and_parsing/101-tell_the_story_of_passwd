@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# This script parses the passwd file and displays the following:
+# The user's name
+# The user's home directory path
+# The user's default shell
+# The user's real name
+# The user's home directory path, sorted in reverse order, case-insensitive
+# The user's name and real name, sorted in reverse order, case-insensitive
+
+while IFS=: read -r user pass uid gid full_name home shell; do
+    echo "The user $user is part of the $gid gang, lives in $home and rides $shell. $uid's place is protected by the psscode $pass, more info aboutthe user here: $full_name"
+done < /etc/passwd
