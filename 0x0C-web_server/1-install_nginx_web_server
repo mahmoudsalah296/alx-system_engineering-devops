@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# install nginx on web server
+# installs nginx on a remote server
 
 apt-get -y update
 apt-get -y install nginx
