@@ -4,7 +4,7 @@
 apt-get -y update
 apt-get -y install nginx
 ufw allow 'Nginx HTTP'
-mkdir /etc/nginx/html
+mkdir -p /etc/nginx/html
 touch /etc/nginx/html/index.html
 echo "Hello Word!" > /etc/nginx/html/index.html
 printf %s "server {
@@ -13,7 +13,7 @@ printf %s "server {
     root   /etc/nginx/html;
     index  index.html index.htm;
     location /redirect_me {
-        return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
+        return 301;
     }
 }" > /etc/nginx/sites-available/default
 
