@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# bash  script that configure HAproxy on my lb-01 server.
+
+apt-get install -y --no-install-recommends software-properties-common
+add-apt-repository -y ppa:vbernat/haproxy-2.6
+apt-get install -y haproxy=2.6.\*
+
+printf %s "
+frontend mahmoud
+    bind *:80
+    mode http
+    timeout client 30s
+    timeout server 30s
+    timeout connect 5s
+    default_backend servers
+backend servers
+    balance roundrobin
+    mode http
+    timeout client 30s
+    timeout server 30s
+    timeout connect 5s
+    server web-01 54.84.40.154:80 check
+    server web-02 3.85.196.155:80 check
+" > /etc/haproxy/haproxy.cfg
+echo "ENABLED=1" | sudo tee -a /etc/default/haproxy
+service haproxy restart
