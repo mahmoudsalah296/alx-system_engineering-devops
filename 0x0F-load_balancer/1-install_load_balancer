@@ -5,6 +5,8 @@ apt-get install -y --no-install-recommends software-properties-common
 add-apt-repository -y ppa:vbernat/haproxy-2.6
 apt-get install -y haproxy=2.6.\*
 
+echo "ENABLED=1" | sudo tee -a /etc/default/haproxy
+
 printf %s "
 frontend mahmoud
     bind *:80
@@ -22,5 +24,4 @@ backend servers
     server web-01 54.84.40.154:80 check
     server web-02 3.85.196.155:80 check
 " > /etc/haproxy/haproxy.cfg
-echo "ENABLED=1" | sudo tee -a /etc/default/haproxy
-service haproxy restart
+service haproxy start
