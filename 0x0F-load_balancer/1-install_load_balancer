@@ -21,7 +21,7 @@ backend servers
     timeout client 30s
     timeout server 30s
     timeout connect 5s
-    server web-01 54.84.40.154:80 check
-    server web-02 3.85.196.155:80 check
+    server 351119-web-01 54.84.40.154:80 check
+    server 351119-web-02 3.85.196.155:80 check
 " > /etc/haproxy/haproxy.cfg
 service haproxy start
