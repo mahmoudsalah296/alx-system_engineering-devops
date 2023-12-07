@@ -41,11 +41,11 @@ frontend  mahmoud-frontend
         default_backend mahmoud
 backend mahmoud
         balance roundrobin
-        server 93511-web-01 54.84.40.154:80 check
-        server 93511-web-02 3.85.196.155:80 check
+        server web-01 54.84.40.154:80 check
+        server web-02 3.85.196.155:80 check
 
 listen http-in
         bind :80
         balance roundrobin
-        server 93511-web-01 54.84.40.154:80 check
-        server 93511-web-02 3.85.196.155:80 check
+        server web-01 54.84.40.154:80 check
+        server web-02 3.85.196.155:80 check
