@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """get data from jsonplaceholder api"""
 
+import csv
 import requests
 import sys
-import csv
 
 
 if __name__ == "__main__":
@@ -23,11 +23,10 @@ if __name__ == "__main__":
         print(f'\t {task}')
 
     with open(f'{user.get("id")}.csv', 'w') as f:
-      writer = csv.writer(f)
-      for task in tasks:
-          writer.writerow([
-            task.get('userId'),
-            name,
-            task.get('completed'),
-            task.get('title'),
-          ])
+        writer = csv.writer(f)
+        for task in tasks:
+            writer.writerow([
+              task.get('userId'),
+              name,
+              task.get('completed'),
+              task.get('title')])
