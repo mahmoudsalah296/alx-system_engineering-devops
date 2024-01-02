@@ -22,7 +22,7 @@ if __name__ == "__main__":
     name = user.json().get("name")
     done = f'{tasks_completed_num}/{tasks_number}'
     print(
-        f"Employee {name} is done with tasks ({done}):"
+        f"Employee {name} is done with tasks({done}):"
     )
     for task in complete_tasks:
         print(f'\t{task}')
