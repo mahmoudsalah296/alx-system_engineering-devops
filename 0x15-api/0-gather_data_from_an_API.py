@@ -19,4 +19,4 @@ if __name__ == "__main__":
         f"Employee {name} is done with tasks({done}):"
     )
     for task in complete_tasks:
-        print(f'\t{task}')
+        print(f'\t {task}')
