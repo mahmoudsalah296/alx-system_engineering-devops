@@ -23,7 +23,7 @@ if __name__ == "__main__":
         print(f'\t {task}')
 
     with open(f'{user.get("id")}.csv', 'w') as f:
-        writer = csv.writer(f)
+        writer = csv.writer(f, quoting=csv.QUOTE_ALL)
         for task in tasks:
             writer.writerow([
               task.get('userId'),
