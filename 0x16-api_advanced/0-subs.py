@@ -13,7 +13,7 @@ def number_of_subscribers(subreddit):
     response = requests.get(url, headers={"User-Agent": "User-Agent"},
                             allow_redirects=False)
 
-    if response.status_code >= 300:
+    if response.status_code == 404:
         return 0
 
     data = response.json().get("data")
